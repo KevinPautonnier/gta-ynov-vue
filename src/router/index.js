@@ -58,19 +58,34 @@ const Register = () => import('@/views/pages/Register')
 const Users = () => import('@/views/users/Users')
 const User = () => import('@/views/users/User')
 
+// Planning
+const Planning = () => import('@/views/planning/Planning')
+
 Vue.use(Router)
 
-export default new Router({
+/*beforeEach((to, from, next) => {
+  if (sessionStorage.length<=0) {
+    next('/login')
+  } else {
+    next()
+  }
+}),*/ 
+var router = new Router({
   mode: 'hash', // https://router.vuejs.org/api/#mode
   linkActiveClass: 'open active',
   scrollBehavior: () => ({ y: 0 }),
   routes: [
     {
       path: '/',
-      redirect: '/dashboard',
+      redirect: '/pages/login',
       name: 'Home',
       component: DefaultContainer,
       children: [
+        {
+          path: 'planning',
+          name: 'Planning',
+          component: Planning
+        },
         {
           path: 'dashboard',
           name: 'Dashboard',
@@ -334,3 +349,14 @@ export default new Router({
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  if (sessionStorage.length == 0 && from.path != "/") {
+    next('/pages/login');
+  }
+  else{
+    next();
+  }
+})
+
+export default router;

@@ -2,7 +2,7 @@
   <div class="app">
     <AppHeader fixed>
       <SidebarToggler class="d-lg-none" display="md" mobile />
-      <b-link class="navbar-brand" to="#">
+      <b-link class="navbar-brand" to="/dashboard">
         <img class="navbar-brand-full" src="img/brand/logo.svg" width="89" height="25" alt="CoreUI Logo">
         <img class="navbar-brand-minimized" src="img/brand/sygnet.svg" width="30" height="30" alt="CoreUI Logo">
       </b-link>
@@ -14,14 +14,7 @@
       </b-navbar-nav>
       <b-navbar-nav class="ml-auto">
         <b-nav-item class="d-md-down-none">
-          <i class="icon-bell"></i>
-          <b-badge pill variant="danger">5</b-badge>
-        </b-nav-item>
-        <b-nav-item class="d-md-down-none">
-          <i class="icon-list"></i>
-        </b-nav-item>
-        <b-nav-item class="d-md-down-none">
-          <i class="icon-location-pin"></i>
+          <span>{{name}}</span> : <span>{{role}}</span>
         </b-nav-item>
         <DefaultHeaderDropdownAccnt/>
       </b-navbar-nav>
@@ -87,7 +80,9 @@ export default {
   },
   data () {
     return {
-      nav: nav.items
+      nav: nav.items,
+      name: sessionStorage.getItem("name"),
+      role: sessionStorage.getItem("role")
     }
   },
   computed: {
