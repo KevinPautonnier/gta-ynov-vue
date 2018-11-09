@@ -351,8 +351,13 @@ var router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
-  if (sessionStorage.length == 0 && from.path != "/") {
+  if (sessionStorage.length == 0 && from.path != "/" && to.path != "/pages/login") {
     next('/pages/login');
+  }
+  else if(to.path == "/logout")
+  {
+    sessionStorage.clear()
+    next('/pages/login')
   }
   else{
     next();

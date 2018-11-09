@@ -79,11 +79,28 @@ export default {
     SidebarMinimizer
   },
   data () {
-    return {
-      nav: nav.items,
-      name: sessionStorage.getItem("name"),
-      role: sessionStorage.getItem("role")
+    if(sessionStorage.getItem("role") == "Salaried"){
+      return {
+        nav: nav.itemsSalaried,
+        name: sessionStorage.getItem("name"),
+        role: sessionStorage.getItem("role")
+      }
     }
+    else if(sessionStorage.getItem("role") == "Team Manager"){
+      return {
+        nav: nav.itemsTM,
+        name: sessionStorage.getItem("name"),
+        role: sessionStorage.getItem("role")
+      }
+    }
+    else if(sessionStorage.getItem("role") == "Human Resources Director"){
+      return {
+        nav: nav.itemsHRS,
+        name: sessionStorage.getItem("name"),
+        role: sessionStorage.getItem("role")
+      }
+    }
+    else return {}
   },
   computed: {
     name () {
