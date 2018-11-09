@@ -10,3 +10,8 @@ Travail fait :
  - Ajout du nom, de l'email, du mot de passe et du rôle dans les donnes.
  - Page de login sur la route "/" avec redirection automatique si non identifié
  - Affichage du nom et du rôle en haut de l'application 
+
+
+08/11/2018 Objectifs :
+ - Création des différentes routes pour les différents rôles
+ - Affichage de différents liens dans le menu en fonction des rôles
