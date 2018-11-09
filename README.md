@@ -15,3 +15,7 @@ Travail fait :
 08/11/2018 Objectifs :
  - Création des différentes routes pour les différents rôles
  - Affichage de différents liens dans le menu en fonction des rôles
+
+Travail fait :
+ - Création des différentes routes pour les différents rôles
+ - Affichage de différents liens dans le menu en fonction des rôles
