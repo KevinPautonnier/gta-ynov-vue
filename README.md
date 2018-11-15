@@ -24,3 +24,7 @@ Travail fait :
 Travail fait :
  - Création des différentes routes pour les différents rôles
  - Affichage de différents liens dans le menu en fonction des rôles
+
+
+15/11/2018 Objectifs :
+ - Commencer à intégrer un calendrier
