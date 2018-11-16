@@ -28,3 +28,10 @@ Travail fait :
 
 15/11/2018 Objectifs :
  - Commencer à intégrer un calendrier
+ 
+Travail fait :
+ - Test du vue-full-calendar
+ 
+
+16/11/2018 Objectifs :
+ - Avancer sur la vue Calendrier
