@@ -2,6 +2,11 @@
 
 Lien du dernier build : https://kevinpautonnier.github.io/
 
+Les différents utilisateurs :
+  - email: 'johndoe@gmail.com', password: '1234'
+  - email: 'samppanori@gmail.com', password: '12345'
+  - email: 'estavanlykos@gmai.com', password: '12345'
+
 08/11/2018 Objectifs :
  - Création des données nécessaires à l'application. Ceci comprend différents utilisateurs avec différents rôles.
  - Création du système de connexion et modification des données affichées en fonction du rôle de l'utilisateur.
@@ -15,3 +20,24 @@ Travail fait :
 08/11/2018 Objectifs :
  - Création des différentes routes pour les différents rôles
  - Affichage de différents liens dans le menu en fonction des rôles
+
+Travail fait :
+ - Création des différentes routes pour les différents rôles
+ - Affichage de différents liens dans le menu en fonction des rôles
+
+
+15/11/2018 Objectifs :
+ - Commencer à intégrer un calendrier
+ 
+Travail fait :
+ - Test du vue-full-calendar
+ 
+
+16/11/2018 Objectifs :
+ - Avancer sur la vue Calendrier
+
+
+Travail fait :
+ - Ajout de données dans le calendar
+ 
+
