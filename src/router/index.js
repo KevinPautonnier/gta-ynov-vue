@@ -13,6 +13,9 @@ const Typography = () => import('@/views/theme/Typography')
 const Charts = () => import('@/views/Charts')
 const Widgets = () => import('@/views/Widgets')
 
+// Planning
+const Planning = () => import('@/views/planning/Planning')
+
 // Views - Components
 const Cards = () => import('@/views/base/Cards')
 const Forms = () => import('@/views/base/Forms')
@@ -58,8 +61,6 @@ const Register = () => import('@/views/pages/Register')
 const Users = () => import('@/views/users/Users')
 const User = () => import('@/views/users/User')
 
-// Planning
-const Planning = () => import('@/views/planning/Planning')
 
 Vue.use(Router)
 

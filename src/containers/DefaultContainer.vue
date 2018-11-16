@@ -14,7 +14,7 @@
       </b-navbar-nav>
       <b-navbar-nav class="ml-auto">
         <b-nav-item class="d-md-down-none">
-          <span>{{name}}</span> : <span>{{role}}</span>
+          <span>{{userName}}</span> : <span>{{role}}</span>
         </b-nav-item>
         <DefaultHeaderDropdownAccnt/>
       </b-navbar-nav>
@@ -59,9 +59,10 @@ import nav from '@/_nav'
 import { Header as AppHeader, SidebarToggler, Sidebar as AppSidebar, SidebarFooter, SidebarForm, SidebarHeader, SidebarMinimizer, SidebarNav, Aside as AppAside, AsideToggler, Footer as TheFooter, Breadcrumb } from '@coreui/vue'
 import DefaultAside from './DefaultAside'
 import DefaultHeaderDropdownAccnt from './DefaultHeaderDropdownAccnt'
+//import { FullCalendar } from 'vue-full-calendar'
+import 'fullcalendar/dist/fullcalendar.css'
 
 export default {
-  name: 'DefaultContainer',
   components: {
     AsideToggler,
     AppHeader,
@@ -82,21 +83,22 @@ export default {
     if(sessionStorage.getItem("role") == "Salaried"){
       return {
         nav: nav.itemsSalaried,
-        name: sessionStorage.getItem("name"),
+        userName: sessionStorage.getItem("name"),
         role: sessionStorage.getItem("role")
       }
     }
     else if(sessionStorage.getItem("role") == "Team Manager"){
+      console.log("toto")
       return {
         nav: nav.itemsTM,
-        name: sessionStorage.getItem("name"),
+        userName: sessionStorage.getItem("name"),
         role: sessionStorage.getItem("role")
       }
     }
     else if(sessionStorage.getItem("role") == "Human Resources Director"){
       return {
         nav: nav.itemsHRS,
-        name: sessionStorage.getItem("name"),
+        userName: sessionStorage.getItem("name"),
         role: sessionStorage.getItem("role")
       }
     }
@@ -111,4 +113,6 @@ export default {
     }
   }
 }
+
+
 </script>

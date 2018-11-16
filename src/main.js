@@ -9,10 +9,16 @@ import BootstrapVue from 'bootstrap-vue'
 import App from './App'
 import router from './router'
 
+import FullCalendar from "vue-full-calendar";
+import "fullcalendar/dist/fullcalendar.min.css";
+Vue.use(FullCalendar);
+
+
+
 // todo
 // cssVars()
 
-Vue.use(BootstrapVue)
+Vue.use(BootstrapVue);
 
 /* eslint-disable no-new */
 new Vue({
