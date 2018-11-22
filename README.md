@@ -41,3 +41,9 @@ Travail fait :
  - Ajout de données dans le calendar
  
 
+22/11/2018 Objectifs :
+ - Création d'un jeu de donnée pour tout les jours travaillés
+ - modification des horaires depuis le role admin
+
+
+
