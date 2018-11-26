@@ -1,9 +1,17 @@
 
 <template>
-  <full-calendar :events="events" :header="header" :defaultView="defaultView" :views="views"></full-calendar>
+  <div>
+    <full-calendar :events="events" :header="header" @event-selected="eventSelected" @event-drop="eventDragStop" @event-resize="eventResizeStop"></full-calendar>
+    <button v-on:click="saveData" v-if="dataModified">Enregistrer les modifications</button>
+  </div>
 </template>
 
-<script>  
+<script>
+  var moment = require('moment');
+  moment().format();
+
+  var _dataModified = false
+
   export default {
     data () {
       return {
@@ -11,40 +19,69 @@
           left: 'today prev,next',
           center: 'title',
         },
-        events: [
-          {
-              title  : 'jour1',
-              start  : '2018-11-12T08:00:00',
-              end    : '2018-11-12T17:00:00',
-              allDay : false,
-          },
-          {
-              title  : 'jour2',
-              start  : '2018-11-13T08:00:00',
-              end    : '2018-11-13T17:00:00',
-              allDay : false,
-          },
-          {
-              title  : 'jour3',
-              start  : '2018-11-14T08:00:00',
-              end    : '2018-11-14T17:00:00',
-              allDay : false,
-          },
-          {
-              title  : 'jour4',
-              start  : '2018-11-15T08:00:00',
-              end    : '2018-11-15T17:00:00',
-              allDay : false,
-          },
-          {
-              title  : 'jour5',
-              start  : '2018-11-16T08:00:00',
-              end    : '2018-11-16T17:00:00',
-              allDay : false,
-          },
-        ],
-        resourceLabelText: 'Rooms',
-        resources: 'https://fullcalendar.io/demo-resources.json?with-nesting',
+        events: JSON.parse(sessionStorage.getItem("planningData")),
+        dataModified : _dataModified
+      }
+    },
+
+    methods: {
+      eventSelected: function(calEvent, jsEvent, view) {
+          if(sessionStorage.getItem('role') == 'Salaried' || sessionStorage.getItem('role') == 'Human Resourses Director'){
+            alert('Vous n\'avez pas le droit de modifier votre planning!');
+            this.events = JSON.parse(sessionStorage.getItem("planningData"));
+          }
+          else{
+            var startHour = prompt("Entrer l'heure de début", "8");
+            var endHour = prompt("Entrer l'heure de fin", "18");
+            var newDate = new Date(calEvent.start)
+            this.events.forEach(function(event){
+              if(event.title == calEvent.title){
+                event.start = moment(newDate.setHours(startHour))
+              }
+            })
+            this.dataModified = true
+          }
+
+       },
+      eventDragStop: function(calEvent){
+        console.log('drop')
+        
+        if(sessionStorage.getItem('role') == 'Salaried' || sessionStorage.getItem('role') == 'Team Manager'){
+          alert('Vous n\'avez pas le droit de modifier votre planning!');
+          this.events = JSON.parse(sessionStorage.getItem("planningData"));
+        }
+        else{
+          var newDate = new Date(calEvent.start)
+          this.events.forEach(function(event){
+            if(event.title == calEvent.title){
+              event.start = moment(newDate.setHours(calEvent.start.format("HH")))
+              event.end = moment(newDate.setHours(calEvent.end.format("HH")))
+            }
+          })
+          this.dataModified = true
+        }
+      },
+      eventResizeStop: function(calEvent){
+        console.log('resize')
+        
+        if(sessionStorage.getItem('role') == 'Salaried' || sessionStorage.getItem('role') == 'Team Manager'){
+          alert('Vous n\'avez pas le droit de modifier votre planning!');
+          this.events = JSON.parse(sessionStorage.getItem("planningData"));
+        }
+        else{
+          var newDate = new Date(calEvent.start)
+          this.events.forEach(function(event){
+            if(event.title == calEvent.title){
+              event.start = moment(newDate.setHours(calEvent.start.format("HH")))
+              event.end = moment(newDate.setHours(calEvent.end.format("HH")))
+            }
+          })
+          this.dataModified = true
+        }
+      },
+      saveData: function(){
+        console.log('dataSave')
+        sessionStorage.setItem("planningData", JSON.stringify(this.events))
       }
     }
   }

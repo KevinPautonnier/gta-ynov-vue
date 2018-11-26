@@ -59,8 +59,6 @@ import nav from '@/_nav'
 import { Header as AppHeader, SidebarToggler, Sidebar as AppSidebar, SidebarFooter, SidebarForm, SidebarHeader, SidebarMinimizer, SidebarNav, Aside as AppAside, AsideToggler, Footer as TheFooter, Breadcrumb } from '@coreui/vue'
 import DefaultAside from './DefaultAside'
 import DefaultHeaderDropdownAccnt from './DefaultHeaderDropdownAccnt'
-//import { FullCalendar } from 'vue-full-calendar'
-import 'fullcalendar/dist/fullcalendar.css'
 
 export default {
   components: {
@@ -88,7 +86,6 @@ export default {
       }
     }
     else if(sessionStorage.getItem("role") == "Team Manager"){
-      console.log("toto")
       return {
         nav: nav.itemsTM,
         userName: sessionStorage.getItem("name"),

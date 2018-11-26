@@ -16,13 +16,13 @@ export default{
     },
     {
       name: 'Fiche Salarié',
-      url: '',
+      url: '/employee_sheet',
       icon: ''
     },
     {
       name: 'Planning',
       url: '/planning',
-      icon: 'icon-grid'
+      icon: ''
     },
     {
       name: 'Tableau de bord personnel',
@@ -61,13 +61,13 @@ export default{
     },
     {
       name: 'Fiche Salarié',
-      url: '',
+      url: 'employee_sheet',
       icon: ''
     },
     {
       name: 'Planning',
       url: '/planning',
-      icon: 'icon-grid'
+      icon: ''
     },
     {
       name: 'Tableau de bord personnel',

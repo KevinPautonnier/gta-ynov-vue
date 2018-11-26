@@ -17,10 +17,12 @@ export default {
             var connected = false;
             usersData.forEach(function (user){
                 if(user.email == that.email && user.password == that.password){
+                    var data = require('../planning/planningGenerated1.json')
                     connected = true
                     sessionStorage.setItem("userID", user.id)
                     sessionStorage.setItem("name", user.name)
                     sessionStorage.setItem("role", user.role)
+                    sessionStorage.setItem("planningData", JSON.stringify(data))
                     that.$router.replace({path: '/dashboard'})
                 }
             })
