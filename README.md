@@ -41,3 +41,27 @@ Travail fait :
  - Ajout de données dans le calendar
  
 
+22/11/2018 Objectifs :
+ - Création d'un jeu de donnée pour tout les jours travaillés
+ - modification des horaires depuis le role admin
+
+
+Travail fait :
+ - Création d'un JSON contenant les events pour le fullcalendar (tous les jours de 2018 de 8h à 18 h sauf les samedis et les dimanches
+ - Début de l'édition des events sur le fullCalendar
+ 
+  
+
+23/11/2018 Objectifs :
+ - modification des horaires depuis le role admin
+
+
+Travail fait :
+ - Le Manager peut modifier les horaires de travail et cliquant ou en déplaçant l'event sur le fulCalendar
+ 
+ 
+ 
+ 
+
+
+
