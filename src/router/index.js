@@ -13,6 +13,9 @@ const Typography = () => import('@/views/theme/Typography')
 const Charts = () => import('@/views/Charts')
 const Widgets = () => import('@/views/Widgets')
 
+//Employee_Sheet
+const Employee_Sheet = () => import('@/views/Employee_sheet')
+
 // Planning
 const Planning = () => import('@/views/planning/Planning')
 
@@ -86,6 +89,11 @@ var router = new Router({
           path: 'planning',
           name: 'Planning',
           component: Planning
+        },
+        {
+          path: 'employee_sheet',
+          name: 'Employee_sheet',
+          component: Employee_Sheet
         },
         {
           path: 'dashboard',

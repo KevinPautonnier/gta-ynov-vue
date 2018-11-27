@@ -22,6 +22,7 @@ export default {
                     sessionStorage.setItem("userID", user.id)
                     sessionStorage.setItem("name", user.name)
                     sessionStorage.setItem("role", user.role)
+                    sessionStorage.setItem("email", user.email)
                     sessionStorage.setItem("planningData", JSON.stringify(data))
                     that.$router.replace({path: '/dashboard'})
                 }
