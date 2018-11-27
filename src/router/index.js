@@ -19,6 +19,9 @@ const Employee_Sheet = () => import('@/views/Employee_sheet')
 // Planning
 const Planning = () => import('@/views/planning/Planning')
 
+// PlanningTeam
+const Planning_Team = () => import('@/views/planning/Planning_Team')
+
 // Views - Components
 const Cards = () => import('@/views/base/Cards')
 const Forms = () => import('@/views/base/Forms')
@@ -89,6 +92,11 @@ var router = new Router({
           path: 'planning',
           name: 'Planning',
           component: Planning
+        },
+        {
+          path: 'planning_team',
+          name: 'Planning_Team',
+          component: Planning_Team
         },
         {
           path: 'employee_sheet',

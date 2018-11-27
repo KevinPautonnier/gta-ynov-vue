@@ -3,3 +3,19 @@
     display: flex;
     flex-direction: column;
 }
+
+#planning-team{
+    display: flex;
+    flex-direction: row;
+}
+
+#employees-names{
+    padding-top: 75px;
+}
+#employees-names>p{
+    margin: 0;
+}
+
+#team-fullcallendar{
+    width: 80%;
+}

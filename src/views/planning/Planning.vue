@@ -36,8 +36,10 @@
             var startHour = prompt("Entrer l'heure de début", "8");
             var endHour = prompt("Entrer l'heure de fin", "18");
             var newDate = new Date(calEvent.start)
+            newDate.setMinutes(0)
             this.events.forEach(function(event){
               if(event.title == calEvent.title){
+                console.log('toto')
                 event.start = moment(newDate.setHours(startHour))
                 event.end = moment(newDate.setHours(endHour))
               }
@@ -86,6 +88,7 @@
         console.log('dataSave')
         sessionStorage.setItem("planningData", JSON.stringify(this.events))
         this.hourCount();
+        this.dataModified = false
       },
       hourCount: function(){
         var data = JSON.parse(sessionStorage.getItem("planningData"))
