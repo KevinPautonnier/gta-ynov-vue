@@ -27,7 +27,7 @@ export default {
                     if(user.role == 'Team Manager'){
                         sessionStorage.setItem('employees', user.employees)
                     }
-                    that.$router.replace({path: '/dashboard'})
+                    that.$router.replace({path: '/planning'})
                 }
             })
             if (!connected){
