@@ -3,7 +3,7 @@
   <div>
     <div>Nombre d'heure éffectuées : {{hours}}</div>
     <button v-on:click="saveData" v-if="dataModified">Enregistrer les modifications</button>
-    <full-calendar :events="events" :header="header" @event-selected="eventSelected" @event-drop="eventDragStop" @event-resize="eventResizeStop"></full-calendar>
+    <full-calendar id="planning"  ref="calendar" :events="events" :header="header" @event-selected="eventSelected" @event-drop="eventDragStop" @event-resize="eventResizeStop"></full-calendar>
   </div>
 </template>
 
@@ -19,6 +19,7 @@
         header: {
           left: 'today prev,next',
           center: 'title',
+          right: 'agendaDay,basicDay,agendaWeek,basicWeek'
         },
         events: JSON.parse(sessionStorage.getItem("planningData")),
         dataModified : _dataModified,

@@ -21,8 +21,6 @@
       return {
         defaultView: 'basicWeek',
         header: {
-          left: 'today prev,next',
-          center: 'title',
         },
         events: JSON.parse(sessionStorage.getItem("planningData")),
         employeesNames: []

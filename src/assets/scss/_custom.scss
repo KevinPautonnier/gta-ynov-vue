@@ -8,9 +8,16 @@
     display: flex;
     flex-direction: row;
 }
+#team-fullcallendar>div{
+    height: 96px!important;
+}
+#team-fullcallendar .fc-head>tr{
+    height: 43px!important;
+}
 
 #employees-names{
-    padding-top: 75px;
+    padding-top: 153px;
+    font-size: 12px;
 }
 #employees-names>p{
     margin: 0;
@@ -18,4 +25,8 @@
 
 #team-fullcallendar{
     width: 80%;
+}
+
+.container-fluid{
+    padding: 0px!important;
 }
