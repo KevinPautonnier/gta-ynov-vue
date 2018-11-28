@@ -13,6 +13,9 @@ const Planning = () => import('@/views/planning/Planning')
 // PlanningTeam
 const Planning_Team = () => import('@/views/planning/Planning_Team')
 
+// Login
+const Login = () => import('@/views/pages/Login')
+
 Vue.use(Router)
 
 var router = new Router({
@@ -40,9 +43,25 @@ var router = new Router({
           path: 'employee_sheet',
           name: 'Employee_sheet',
           component: Employee_Sheet
-        }
+        },
       ]
     },
+    
+    {
+      path: '/pages',
+      redirect: '/pages/404',
+      name: 'Pages',
+      component: {
+        render (c) { return c('router-view') }
+      },
+      children: [
+        {
+          path: 'login',
+          name: 'Login',
+          component: Login
+        }
+      ]
+    }
   ]
 })
 
